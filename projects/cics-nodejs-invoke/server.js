@@ -19,7 +19,7 @@ var app = express();
 app.use(bodyParser.json());
 
 // Read in variables
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 8080;
 var catalogServer = process.env.CATALOG_SERVER || 'http://example.org:3001';
 
 // If they exist, use the Scheme, Hostname and Port variables provided by zOSPT to connect to the target CICS region.
