@@ -28,9 +28,9 @@ var catalogServer = process.env.CATALOG_SERVER || 'http://example.org:3001';
 //      and has created a Service Binding and Secret containing the associated environment variables.)
 if (process.env.DFH_REGION_HOSTNAME) {
   if (process.env.DFH_REGION_HTTPS !== 'NO') {
-    catalogServer = 'https://' + process.env.DFH_REGION_HOSTNAME + ':' + process.env.DFH_REGION_HTTPS'
+    catalogServer = 'https://' + process.env.DFH_REGION_HOSTNAME + ':' + process.env.DFH_REGION_HTTPS
   } else {
-    catalogServer = 'http://' + process.env.DFH_REGION_HOSTNAME + ':' + process.env.DFH_REGION_HTTP'
+    catalogServer = 'http://' + process.env.DFH_REGION_HOSTNAME + ':' + process.env.DFH_REGION_HTTP
   }
 }
 
