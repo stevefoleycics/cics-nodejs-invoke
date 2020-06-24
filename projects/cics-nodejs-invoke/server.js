@@ -23,13 +23,11 @@ var port = process.env.PORT || 8080;
 var catalogServer = process.env.CATALOG_SERVER || 'http://example.org:3001';
 
 // If they exist, use the Scheme, Hostname and Port variables provided by zOSPT to connect to the target CICS region.
-//  (Scenario: a cloud-native developer is testing this Node.js application in a private cloud platform such as Red Hat OpenShift, 
+//  (Scenario: a cloud-native developer is testing this Node.js application in a cloud platform, 
 //    has used IBM zOS Cloud Broker to provision a test CICS region to host the Catalog application,
 //      and has created a Service Binding and Secret containing the associated environment variables.)
 if (process.env.DFH_REGION_HOSTNAME) {
-  if (process.env.DFH_REGION_HTTPS !== 'NO') {
-    catalogServer = 'https://' + process.env.DFH_REGION_HOSTNAME + ':' + process.env.DFH_REGION_HTTPS
-  } else {
+  if ( !isNaN(process.env.DFH_REGION_HTTP) ) {
     catalogServer = 'http://' + process.env.DFH_REGION_HOSTNAME + ':' + process.env.DFH_REGION_HTTP
   }
 }
